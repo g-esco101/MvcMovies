@@ -1,0 +1,58 @@
+﻿@model MvcMovie.Models.Movie
+
+@{
+    /*By including a @model statement at the top of the view template file, you can 
+specify the type of object that the view expects. When you created the movie controller,
+Visual Studio automatically included the following 
+@model statement at the top of the Details.cshtml file:
+This @model directive allows you to access the movie that the controller passed to the 
+view by using a Model object that's strongly typed. */
+
+    ViewBag.Title = "Details";
+}
+
+Read more: https://html.com/tags/comment-tag/#ixzz5vyfpTTna
+<h2>Details</h2>
+
+<div>
+    <h4>Movie</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ReleaseDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ReleaseDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Genre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Genre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Price)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Price)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
